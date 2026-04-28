@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Website with Hamburger Menu</title>
+
+<style>
+
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+nav {
+  background: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.logo {
+  flex: 1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* MENU */
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* CONTENT */
+header {
+  background: #555;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.box {
+  background: lightblue;
+  padding: 50px;
+  width: 30%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* TABLET VIEW */
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #444;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .menu li {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  #menu-toggle:checked + .hamburger + .menu {
+    display: flex;
+  }
+}
+
+/* MOBILE VIEW */
+@media (max-width: 480px) {
+  header {
+    font-size: 18px;
+  }
+
+  .box {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">MySite</div>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <ul class="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <h1>Responsive Webpage</h1>
+</header>
+
+<!-- CONTENT -->
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+
+</body>
+</html>
