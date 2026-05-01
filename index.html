@@ -3,43 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Page</title>
+<title>Responsive Website</title>
 
 <style>
-
-/* Default (Desktop) */
-body {
-  font-family: Arial;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.header {
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #333;
   color: white;
-  text-align: center;
-  padding: 20px;
+  padding: 15px 20px;
+  position: relative;
 }
 
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ================= HEADER ================= */
+.header {
+  text-align: center;
+  padding: 40px;
+  background: #666;
+  color: white;
+}
+
+/* ================= CONTENT ================= */
 .container {
   display: flex;
+  gap: 20px;
+  padding: 20px;
 }
 
 .box {
   flex: 1;
-  padding: 50px;
-  margin: 10px;
+  padding: 60px;
   background: lightblue;
   text-align: center;
+  border-radius: 10px;
 }
+
+/* ================= RESPONSIVE ================= */
 
 /* Tablet */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+
+  /* Hamburger visible */
+  .hamburger {
+    display: block;
   }
 
-  .box {
-    background: lightgreen;
+  /* Hide menu */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .nav-links li {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* Toggle menu */
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Stack boxes */
+  .container {
+    flex-direction: column;
   }
 }
 
@@ -60,10 +131,28 @@ body {
 
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">My Website</div>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
 <div class="header">
   <h1>Responsive Webpage</h1>
+  <p>This layout adjusts for mobile, tablet, and desktop</p>
 </div>
 
+<!-- CONTENT -->
 <div class="container">
   <div class="box">Box 1</div>
   <div class="box">Box 2</div>
