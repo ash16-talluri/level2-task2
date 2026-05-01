@@ -1,123 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Design</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Design</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      line-height: 1.6;
-    }
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: white;
+  padding: 15px 20px;
+  position: relative;
+}
 
-    /* NAVBAR */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #333;
-      padding: 10px 20px;
-      color: white;
-    }
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-    }
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
 
-    .nav-links {
-      display: flex;
-      list-style: none;
-    }
+.nav-links li {
+  margin-left: 25px;
+}
 
-    .nav-links li {
-      margin-left: 20px;
-    }
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
 
-    .nav-links a {
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-    }
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+}
 
-    .nav-links a:hover {
-      color: #00bcd4;
-    }
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
 
-    /* HAMBURGER */
-    .menu-toggle {
-      display: none;
-    }
+/* HERO */
+.header {
+  text-align: center;
+  padding: 40px;
+  background: #666;
+  color: white;
+}
 
-    .hamburger {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
+/* BOX CONTAINER */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
 
-    /* CONTENT */
-    .container {
-      padding: 20px;
-      text-align: center;
-    }
+/* BOXES */
+.box {
+  flex: 1;
+  background: #8fb3c1;
+  padding: 60px;
+  text-align: center;
+  border-radius: 10px;
+}
 
-    /* MEDIA QUERY */
-    @media (max-width: 768px) {
-      .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #333;
-        flex-direction: column;
-        align-items: center;
-        display: none;
-      }
+/* ========================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ========================= */
 
-      .nav-links li {
-        margin: 15px 0;
-      }
+@media (max-width: 768px) {
 
-      .menu-toggle:checked + .hamburger + .nav-links {
-        display: flex;
-      }
+  /* NAV MENU */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
 
-      .hamburger {
-        display: block;
-      }
-    }
-  </style>
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  /* SHOW MENU WHEN CHECKED */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  /* SHOW HAMBURGER */
+  .hamburger {
+    display: block;
+  }
+
+  /* STACK BOXES */
+  .container {
+    flex-direction: column;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="logo">My Website</div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">MySite</div>
 
-    <!-- Checkbox hack -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
 
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
 
-  <div class="container">
-    <h1>Responsive Webpage</h1>
-    <p>This layout adjusts automatically for mobile, tablet, and desktop screens.</p>
-  </div>
+<!-- HEADER -->
+<div class="header">
+  <h1>Responsive Webpage</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
 
 </body>
 </html>
