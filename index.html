@@ -2,132 +2,66 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<!-- IMPORTANT -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Responsive Design</title>
+<title>Responsive Page</title>
 
 <style>
-* {
+
+/* Default (Desktop) */
+body {
+  font-family: Arial;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header {
   background: #333;
   color: white;
-  padding: 15px;
-}
-
-.logo {
-  font-size: 20px;
-}
-
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  list-style: none;
-}
-
-.nav-links li {
-  margin-left: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-}
-
-/* HAMBURGER */
-.menu-toggle {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* HEADER */
-.header {
   text-align: center;
-  padding: 40px;
+  padding: 20px;
 }
 
-/* BOXES */
 .container {
   display: flex;
-  padding: 20px;
-  gap: 15px;
 }
 
 .box {
   flex: 1;
   padding: 50px;
+  margin: 10px;
   background: lightblue;
   text-align: center;
 }
 
-/* ================= MOBILE ================= */
+/* Tablet */
 @media (max-width: 768px) {
-
-  /* SHOW HAMBURGER */
-  .hamburger {
-    display: block;
-  }
-
-  /* HIDE MENU */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #333;
-  }
-
-  .nav-links li {
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  /* TOGGLE MENU */
-  .menu-toggle:checked ~ .nav-links {
-    display: flex;
-  }
-
-  /* STACK BOXES */
   .container {
     flex-direction: column;
   }
+
+  .box {
+    background: lightgreen;
+  }
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+  .header {
+    font-size: 18px;
+  }
+
+  .box {
+    padding: 30px;
+    background: lightcoral;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<nav class="navbar">
-  <div class="logo">My Website</div>
-
-  <input type="checkbox" id="menu-toggle" class="menu-toggle">
-  <label for="menu-toggle" class="hamburger">&#9776;</label>
-
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-
 <div class="header">
   <h1>Responsive Webpage</h1>
-  <p>This layout adjusts automatically</p>
 </div>
 
 <div class="container">
